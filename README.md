@@ -2,7 +2,7 @@
 <div>
 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fhappylie%2Flotto_data&count_bg=%2379C83D&title_bg=%23555555&icon=github.svg&icon_color=%23E7E7E7&title=view&edge_flat=false"/>
 <img src="https://img.shields.io/badge/SQLite-v3.34.1-blue?logo=sqlite" />
-<img src="https://img.shields.io/badge/Python-3.5.x +-blue?logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/Python->=3.5-blue?logo=python&logoColor=white" />
 </div>
 
 1회 부터 현재까지 로또 당첨 번호 데이터베이스
