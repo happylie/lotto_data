@@ -16,13 +16,13 @@
 ## 로또 당첨 번호 Tool 
 ### 설치 방법
 #### 1. Git Clone
-```
+```bash
 $ git clone https://github.com/happylie/lotto_data.git
-```bash
-#### 2. Requirements 설치
 ```
-$ pip install -r requirements.txt
+#### 2. Requirements 설치
 ```bash
+$ pip install -r requirements.txt
+```
 ### 실행 방법
 #### 1. Help
 ```bash
