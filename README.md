@@ -10,25 +10,22 @@
 - https://happylie.tistory.com/97
 
 ## 현재 데이터 
-- 1회 ~ 1030회 / 2022.09.03 추가완료
-- 1031회 / 2022.09.03 추가 완료
-- 1032회 / 2022.09.10 추가 완료
-- 1033회 / 2022.09.17 추가 완료
-- 1034회 / 2022.09.24 추가 완료
+- 1회 ~ 1034회 / 2022.09.24 추가완료
+- 1035회 / 2022.10.01 추가 완료
 
 ## 로또 당첨 번호 Tool 
 ### 설치 방법
-1. Git Clone
+#### 1. Git Clone
 ```
 $ git clone https://github.com/happylie/lotto_data.git
-```
-2. Requirements 설치
+```bash
+#### 2. Requirements 설치
 ```
 $ pip install -r requirements.txt
-```
+```bash
 ### 실행 방법
-1. Help
-```
+#### 1. Help
+```bash
 $ python lotto_data.py -h
 usage: lotto [-h] [-d DB_PATH] [-i] [-s] [-t [TOP]] [-c [CUSTOM]] [-sr [SROUND]] [-er [EROUND]] [-exb] [-v]
 
@@ -51,13 +48,13 @@ optional arguments:
   -exb, --ex_bonus      보너스볼 제외
   -v, --version         show program's version number and exit
 ```
-2. 최신 로또 데이터 등록
-```
+#### 2. 최신 로또 데이터 등록
+```bash
 $ python ex_lotto.py -i                    
 정상적으로 1032회 로또 당첨 번호를 데이터베이스에 등록하였습니다.
 ```
-3. 전체 당첨번호 통계 확인
-```
+#### 3. 전체 당첨번호 통계 확인
+```bash
 $ python lotto_data.py -s
 ### 1회 ~ 1032회 전체 통계 ###
 43번 : 180개
@@ -65,8 +62,8 @@ $ python lotto_data.py -s
 1번 : 175개
 ... 이하 생략 ...
 ```
-4. 전체 당첨번호 보너스볼 제외 통계 확인
-```
+#### 4. 전체 당첨번호 보너스볼 제외 통계 확인
+```bash
 $ python lotto_data.py -s -exb
 ### 1회 ~ 1032회 보너스볼 제외 통계 ###
 34번 : 158개
@@ -74,8 +71,8 @@ $ python lotto_data.py -s -exb
 12번 : 151개
 ... 이하 생략 ...
 ```
-5. 당첨번호 Top 통계 확인
-```
+#### 5. 당첨번호 Top 통계 확인
+```bash
 $ python lotto_data.py -t
 ### 1회 ~ 1032회 Top 6 전체 통계 ###
 43번 : 180개
@@ -98,8 +95,8 @@ $ python lotto_data.py -t 10
 39번 : 170개
 33번 : 170개
 ```
-6. 당첨번호 Top 보너스볼 제외 통계 확인
-```
+#### 6. 당첨번호 Top 보너스볼 제외 통계 확인
+```bash
 $ python lotto_data.py -t -exb
 ### 1회 ~ 1032회 Top 6 보너스볼 제외 통계 ###
 34번 : 158개
@@ -122,8 +119,8 @@ $ python lotto_data.py -t 10 -exb
 14번 : 146개
 45번 : 146개
 ```
-7. 당첨번호 커스텀 Top 통계 확인
-```
+#### 7. 당첨번호 커스텀 Top 통계 확인
+```bash
 $ python lotto_data.py -c -sr 1000 -er 1032
 ### 1000회 ~ 1032회 Top 6 전체 통계 ###
 12번 : 10개
@@ -146,8 +143,8 @@ $ python lotto_data.py -c 10 -sr 1000 -er 1032
 32번 : 6개
 42번 : 6개
 ```
-8.당첨번호 커스텀 Top 보너스볼 제외 통계 확인
-```
+#### 8.당첨번호 커스텀 Top 보너스볼 제외 통계 확인
+```bash
 $ python lotto_data.py -c -sr 1000 -er 1032 -exb
 ### 1000회 ~ 1032회 Top 6 보너스볼 제외 통계 ###
 12번 : 10개
