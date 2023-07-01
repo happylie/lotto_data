@@ -165,6 +165,16 @@ class LottoData:
         self.db_path = db_path
         self.site_url = 'https://www.dhlottery.co.kr/common.do?method=main&mainMode=default'
 
+    @staticmethod
+    def __set_round_date(round_date):
+        try:
+            rd = round_date.replace('-', '.')
+            return rd.strip('(').strip(')').strip('추첨')
+        except Exception as err:
+            print(err)
+            return round_date
+
+
     def __get_lotto_info(self):
         """
         동행복권 사이트에서 최신 회차 데이터 가지고 오기
@@ -181,7 +191,7 @@ class LottoData:
                 return False, {}
             ret_json = {
                 "round": int(content_data.find('strong', {'id': 'lottoDrwNo'}).text),
-                "round_date": content_data.find('span', {'id': 'drwNoDate'}).text.replace('-', '.'),
+                "round_date": self.__set_round_date(content_data.find('span', {'id': 'drwNoDate'}).text),
                 "drw_1st": int(content_data.find('span', {'id': 'drwtNo1'}).text),
                 "drw_2nd": int(content_data.find('span', {'id': 'drwtNo2'}).text),
                 "drw_3rd": int(content_data.find('span', {'id': 'drwtNo3'}).text),
