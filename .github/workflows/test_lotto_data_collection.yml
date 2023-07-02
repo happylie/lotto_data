@@ -1,0 +1,47 @@
+name: test_lotto_data_collection.yml
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: echo repository name
+        run: echo "${{ github.repository }}"
+      
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.BOT_GITACTION }}
+
+      - name: Set current date as env variable
+        run: echo "NOW=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+        
+      - name: Echo current date
+        run: echo $NOW
+        
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.11"
+    
+      - name: Create Brunch
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "github-actions"
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run
+        run: |
+          python lotto_data.py -i
+        
+      - name: Add & Commit & Push
+        run: |
+          git add -A .
+          git commit -am "Inject Date $NOW"
+          git push --set-upstream origin main
