@@ -1,4 +1,4 @@
-name: test_lotto_data_collection.yml
+name: run_lotto_data_collection.yml
 
 on:
   schedule:
